@@ -58,6 +58,7 @@ app.get('/homepage', async (req, res) => {
     // Console log the random object you have fetched before rendering it on the home page
 
     // Render the homepage and pass the random breed object
+    res.render('homepage');
 });
 
 // Route to display all the breeds
