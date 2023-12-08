@@ -11,6 +11,7 @@ const PORT = 3000;
 const app = express();
 app.use(bodyParser());
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
 // Function to get a random ID from the breeds collection
 function breedRandomizer(breeds) {
@@ -37,7 +38,7 @@ function factRandomizer(facts) {
 }
 
 // Route for the homepage
-app.get('/homepage.ejs', async (req, res) => {
+app.get('/homepage', async (req, res) => {
     // ----- Random Breed -----
     // Find all the breeds from the database and assign it to the breeds variable.
 
