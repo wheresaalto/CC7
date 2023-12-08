@@ -13,6 +13,10 @@ app.use(bodyParser());
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+app.get('/', (req, res) => {
+    res.send('Hello, World!');
+  });
+
 // Function to get a random ID from the breeds collection
 function breedRandomizer(breeds) {
     let breedsIDs = [];
@@ -58,7 +62,7 @@ app.get('/homepage', async (req, res) => {
     // Console log the random object you have fetched before rendering it on the home page
 
     // Render the homepage and pass the random breed object
-    res.render('homepage');
+    //res.render('homepage');
 });
 
 // Route to display all the breeds
