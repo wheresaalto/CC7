@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const database = require('./database/database.js');
 
-const PORT = 80;
+const PORT = 3000;
 
 const app = express();
 app.use(bodyParser());
