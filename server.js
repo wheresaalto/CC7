@@ -37,7 +37,7 @@ function factRandomizer(facts) {
 }
 
 // Route for the homepage
-app.get('/views/homepage.ejs', async (req, res) => {
+app.get('/homepage.ejs', async (req, res) => {
     // ----- Random Breed -----
     // Find all the breeds from the database and assign it to the breeds variable.
 
