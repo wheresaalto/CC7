@@ -1,9 +1,30 @@
-<!-- Include head and header partials here -->
+<!-- Include head partial here -->
+<%- include('../partials/head') %>
 
-<!-- Create divs that display all the breeds and their corresponding images from MongoDB. 
-    This data should come from the server.js files that will fetch the required data from MongoDB, -->
+<body>
+  <!-- Include header partial here -->
+  <%- include('../partials/header') %>
+  <nav>
+    <a href="/breeds">Breeds</a>
+    <a href="/facts">Facts</a>
+  </nav>
+  <h1>All Breeds</h1>
 
-    <!-- Each div element should be wrapped with an anchor tag that redirects the user to that particular breed's detail route i.e. '/breed/:breedId'  by passing its ID in the URL -->
+  <!-- Display all breeds as separate <div> elements with clickable URLs -->
+  <% breeds.forEach((breed) => { %>
+    <div class="breed-container">
+      <h2><%= breed.breed %></h2>
+      <img class="breed-image" src="<%= breed.image %>" alt="<%= breed.breed %> Image">
+      <p>
+        <!-- Create a clickable URL that loads the detail elements for that breed -->
+        <a href="/breed/<%= breed._id %>">View Details</a>
+      </p>
+    </div>
+  <% }); %>
 
+  <!-- Include foot and footer partials here -->
+  <%- include('../partials/foot') %>
+  <%- include('../partials/footer') %>
+</body>
 
-<!-- Include foot and footer partials here -->
+</html>

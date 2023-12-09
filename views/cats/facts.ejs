@@ -1,9 +1,28 @@
-<!-- Include head and header partials here -->
+<!-- Include head partial here -->
+<%- include('../partials/head') %>
 
-<!-- Create an unordered list that display all the facts from MongoDB. 
-    This data should come from the server.js files that will fetch the required data from MongoDB -->
+<body>
+  <!-- Include header partial here -->
+  <%- include('../partials/header') %>
+  <nav>
+    <a href="/breeds">Breeds</a>
+    <a href="/facts">Facts</a>
+  </nav>
+  <h1>All Facts</h1>
 
-    <!-- Each list item should be wrapped with an anchor tag that redirects the user to that particular fact's detail route i.e. '/fact/:factId'  by passing its ID in the URL -->
+  <!-- Display all facts as an unordered list -->
+  <ul>
+    <% facts.forEach((fact) => { %>
+      <li>
+        <!-- Create a clickable URL that loads the detail elements for that fact -->
+        <a href="/facts/<%= fact._id %>"><%= fact.fact %></a>
+      </li>
+    <% }); %>
+  </ul>
 
+  <!-- Include foot and footer partials here -->
+  <%- include('../partials/foot') %>
+  <%- include('../partials/footer') %>
+</body>
 
-<!-- Include foot and footer partials here -->
+</html>

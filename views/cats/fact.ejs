@@ -1,7 +1,26 @@
-<!-- Include head and header partials here -->
+<!-- Include head partial here -->
+<%- include('../partials/head') %>
 
-<!-- Create a div that displays all the fact data (fact, length) using the ID provided in the URL. 
-    This data should come from the server.js files that will fetch the required data from MongoDB -->
+<body>
+  <!-- Include header partial here -->
+  <%- include('../partials/header') %>
+  <nav>
+    <a href="/breeds">Breeds</a>
+    <a href="/facts">Facts</a>
+  </nav>
+  <div class="fact-detail-container">
+    <h1>Fact Details</h1>
 
+    <!-- Display breed details -->
+    <div class="fact-detail">
+      <h3>Fact: <%= fact.fact %></h3>
+      <p>Length: <%= fact.length %></p>
+    </div>
+  </div>
 
-<!-- Include foot and footer partials here -->
+    <footer>
+        <!-- Include foot and footer partials here -->
+    </footer>
+</body>
+
+</html>

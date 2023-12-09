@@ -1,7 +1,30 @@
-<!-- Include head and header partials here -->
+<!-- Include head partial here -->
+<%- include('../partials/head') %>
 
-<!-- Create a div that displays all the breed data (image, breed, country, origin, coat, pattern) using the ID provided in the URL. 
-    This data should come from the server.js files that will fetch the required data from MongoDB -->
+<body>
+  <!-- Include header partial here -->
+  <%- include('../partials/header') %>
+  <nav>
+    <a href="/breeds">Breeds</a>
+    <a href="/facts">Facts</a>
+  </nav>
+  <div class="breed-detail-container">
+    <h1>Breed Details</h1>
 
+    <!-- Display breed details -->
+    <div class="breed-detail">
+      <img src="<%= breed.image %>" alt="<%= breed.breed %> Image">
+      <h2>Breed: <%= breed.breed %></h2>
+      <p>Country: <%= breed.country %></p>
+      <p>Origin: <%= breed.origin %></p>
+      <p>Coat: <%= breed.coat %></p>
+      <p>Pattern: <%= breed.pattern %></p>
+    </div>
+  </div>
 
-<!-- Include foot and footer partials here -->
+  <!-- Include foot and footer partials here -->
+  <%- include('../partials/foot') %>
+  <%- include('../partials/footer') %>
+</body>
+
+</html>

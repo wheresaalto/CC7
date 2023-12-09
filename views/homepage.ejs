@@ -6,21 +6,37 @@
   <title>Homepage</title>
 </head>
 <body>
-  <!-- Display random cat breed and fact here -->
+  <nav>
+    <a href="/breeds">Breeds</a>
+    <a href="/facts">Facts</a>
+  </nav>
   <header>
     <h1>Welcome to My Cat App</h1>
-</header>
-<section>
+  </header>
+  <section>
     <h2>Random Cat Information</h2>
     <div>
-        <h3>Random Breed:</h3>
+      <h3>Random Breed:</h3>
+      <!-- Display random breed information -->
+      <% if (randomBreed) { %>
+        <p>Name: <%= randomBreed.breed %></p>
+        <img src="<%= randomBreed.image %>" alt="<%= randomBreed.breed %> Image">
+      <% } else { %>
+        <p>No random breed available</p>
+      <% } %>
     </div>
     <div>
-        <h3>Random Fact:</h3>
+      <h3>Random Fact:</h3>
+      <!-- Display random fact information -->
+      <% if (randomFact) { %>
+        <p><%= randomFact.fact %></p>
+      <% } else { %>
+        <p>No random fact available</p>
+      <% } %>
     </div>
-</section>
-<footer>
+  </section>
+  <footer>
     <p>&copy; 2023 My Cat App</p>
-</footer>
+  </footer>
 </body>
 </html>
