@@ -7,7 +7,7 @@ const path = require('path');
 const database = require('./database/database.js');
 const { ObjectId } = require('mongodb');
 
-const PORT = 3001;
+const PORT = 3000;
 
 const app = express();
 app.use(bodyParser());
