@@ -7,5 +7,23 @@
 </head>
 <body>
   <!-- Display random cat breed and fact here -->
+  <header>
+    <h1>Welcome to My Cat App</h1>
+</header>
+<section>
+    <h2>Random Cat Information</h2>
+    <div>
+        <h3>Random Breed:</h3>
+        <p><%= randomBreed.name %></p> <!-- Assuming 'name' is a property of your breed object -->
+        <img src="<%= randomBreed.image %>" alt="<%= randomBreed.name %> Image"> <!-- Assuming 'image' is a property of your breed object -->
+    </div>
+    <div>
+        <h3>Random Fact:</h3>
+        <p><%= randomFact.text %></p> <!-- Assuming 'text' is a property of your fact object -->
+    </div>
+</section>
+<footer>
+    <p>&copy; 2023 My Cat App</p>
+</footer>
 </body>
 </html>
