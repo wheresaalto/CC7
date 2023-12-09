@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const database = require('./database/database.js');
 
-const PORT = 3000;
+const PORT = 3001;
 
 const app = express();
 app.use(bodyParser());
@@ -58,7 +58,7 @@ app.get('/', async (req, res) => {
     // Console log the random object you have fetched before rendering it on the home page
 
     // Render the homepage and pass the random breed object
-    res.render('homepage', { randomBreed, randomFact });
+    res.render('homepage');
 });
 
 // Route to display all the breeds
@@ -100,7 +100,7 @@ app.get('/fact/:factId', async (req, res) => {
 });
 
 app.listen(PORT, async () => {
-    await database.setup();
+    //await database.setup();
     console.log(`Server started on port ${PORT}`);
 });
 
